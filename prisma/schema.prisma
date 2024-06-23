@@ -13,7 +13,7 @@ model Driver {
   year_born String @db.Char(4)
   password  String
   cellphone String @db.Char(11) 
-
+  
   @@map("driver")
 }
 
