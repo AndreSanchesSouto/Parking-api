@@ -3,6 +3,7 @@ import { CreateDriverController } from "./controllers/CreateDriverController"
 import { CreateCarController } from "./controllers/CreateCarController"
 import { ListDriversController } from "./controllers/ListDriversController"
 import { ListCarsController } from "./controllers/ListCarsController"
+import { DeleteCarController } from "./controllers/DeleteCarController"
 
 export async function routes(server: FastifyInstance) {
 
@@ -22,6 +23,10 @@ export async function routes(server: FastifyInstance) {
 
     server.post("/car-register", async (request: FastifyRequest, reply: FastifyReply) => {
         return new CreateCarController().handle(request, reply)
+    })
+
+    server.delete("/car-delete", async(request: FastifyRequest, reply: FastifyReply) => {
+        return new DeleteCarController().handle(request, reply)
     })
 
 }
