@@ -5,9 +5,13 @@ import { ListDriversController } from "./controllers/ListDriversController"
 import { ListCarsController } from "./controllers/ListCarsController"
 import { DeleteCarController } from "./controllers/DeleteCarController"
 import { DeleteDriverController } from "./controllers/DeleteDriverController"
-
+import { CreateValetController } from "./controllers/CreateValetController"
 
 export async function routes(server: FastifyInstance) {
+
+    server.post("/register", async (request: FastifyRequest, reply: FastifyReply) => {
+        return new CreateValetController().handle(request, reply)
+    })
 
     server.get("/drivers", async (request: FastifyRequest, reply: FastifyReply) => {
         return new ListDriversController().handle(request, reply)

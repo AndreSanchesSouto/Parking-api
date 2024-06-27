@@ -25,3 +25,14 @@ model Car {
 
   @@map("car")
 }
+
+model Valet {
+  id String @id @default(uuid()) 
+  fullname String
+  cpf String @unique @db.Char(11)
+  email String @unique
+  cellphone String @db.Char(11)
+  password String
+
+  @@map("valet")
+}

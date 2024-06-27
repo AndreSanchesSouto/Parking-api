@@ -1,4 +1,4 @@
-import { Driver } from "../interfaces/driver";
+import { Driver } from "../interfaces/Driver";
 import { PrismaClient } from "@prisma/client";
 
 export class CreateDriverService {
